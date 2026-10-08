@@ -1,0 +1,187 @@
+---
+title: "Synthetic Retail Sales Script Documentation"
+author: "Saravanan Gnanasekaran"
+output: html_document
+---
+
+**AI Assistance Declaration:** I used ChatGPT for project planning,
+synthetic data examples, R learning guidance, and documentation formatting.
+Prompts used: "Suggest Markdown formatting and code block examples for
+documenting this script in Script_Documentation.Rmd," with my script
+description and formatting requirements. The complete prompt and key
+response will be recorded in Appendix.md. I reviewed the documentation
+against my R Console outputs and displayed chart. Independent Google
+Sheets verification and knitting checks are pending. All final calculations
+are done by myself. I am responsible for the accuracy and originality of
+this work.
+
+# Purpose
+
+The script `analysis.R` examines fictional retail transactions and
+summarizes sales by product category. This project demonstrates a basic
+R analysis workflow using synthetic data.
+
+# Inputs
+
+The input file, `synthetic_sales.csv`, contains nine fictional transactions
+and five columns.
+
+| Column | Description | Imported type |
+| --- | --- | --- |
+| transaction_id | Fictional transaction identifier | Character |
+| category | Electronics, Homeware, or Stationery | Character |
+| quantity | Number of items sold | Integer |
+| unit_price | Price per item | Integer |
+| sales_amount | Transaction sales amount supplied in the CSV | Integer |
+
+No currency is specified. The dataset contains no real customer information.
+
+The intended transaction calculation is quantity multiplied by unit price.
+The script summarizes the supplied sales amounts rather than recalculating
+each transaction.
+
+# Requirements
+
+- R, accessed through RStudio in Posit Cloud or a local installation.
+- No additional packages are required for `analysis.R`.
+- The CSV and script must be accessible from the project working directory.
+- Rendering this document requires R Markdown tooling, which is separate
+  from the analysis script's requirements.
+
+The R version used has not yet been recorded.
+
+# Script Workflow
+
+1. Import the CSV into an object named `sales`.
+2. Preview the records using `head()`.
+3. Inspect column types using `str()`.
+4. Check dataset dimensions using `dim()`.
+5. Check for missing values using `anyNA()`.
+6. Summarize sales by category using `aggregate()`.
+7. Display category totals using `barplot()`.
+
+# Code Examples
+
+These examples reproduce code already used in the project.
+They are displayed without execution because `eval=FALSE`.
+
+## Import the Dataset
+
+```{r import-example, eval=FALSE}
+sales <- read.csv("synthetic_sales.csv")
+```
+
+The relative path assumes that the CSV is in the working directory.
+The imported data is stored in `sales`.
+
+## Inspect the Dataset
+
+```{r inspection-example, eval=FALSE}
+head(sales)
+str(sales)
+dim(sales)
+```
+
+These instructions preview records, identify column types, and show
+the number of rows and columns.
+
+## Check Missing Values
+
+```{r missing-values-example, eval=FALSE}
+anyNA(sales)
+```
+
+A result of `FALSE` means no missing values were detected.
+It does not establish that all values are accurate.
+
+## Summarize Sales by Category
+
+```{r category-summary-example, eval=FALSE}
+category_sales <- aggregate(sales_amount ~ category,
+                            data = sales,
+                            FUN = sum)
+category_sales
+```
+
+This instruction groups transactions by category and adds their supplied
+sales amounts.
+
+## Display the Chart
+
+```{r chart-example, eval=FALSE}
+# Replace this comment with the exact barplot() instruction
+# from your saved analysis.R script.
+```
+
+The chart was displayed successfully, but the exact chart instruction
+has not been supplied for this documentation draft.
+
+# Outputs
+
+## Reported R Results
+
+The imported dataset contained nine rows and five columns.
+The missing-value check returned `FALSE`.
+
+The following table reproduces the reported R Console output.
+Independent Google Sheets verification is pending.
+
+| Category | Sales amount |
+| --- | ---: |
+| Electronics | 85 |
+| Homeware | 56 |
+| Stationery | 40 |
+
+## Chart
+
+The script displays a bar chart in the Plots panel with:
+
+> barplot(category_sales$sales_amount,
++         names.arg = category_sales$category,
++         main = "Synthetic Sales by Category",
++         xlab = "Product Category",
++         ylab = "Sales Amount",
++         col = "steelblue")
+
+The script does not save tables or chart files.
+Knitting this document produces a separate documentation output.
+
+# Verification
+
+| Check | Observed result or status |
+| --- | --- |
+| CSV import | The sales object appeared in the Environment |
+| Column types | Two character columns and three integer columns |
+| Dataset dimensions | Nine rows and five columns |
+| Missing values | anyNA(sales) returned FALSE |
+| Chart appearance | Visible bars were consistent with reported category totals |
+| Spreadsheet transaction calculations | Pending confirmation |
+| Independent category totals in Google Sheets | Pending |
+| Exact chart code inserted into this document | Pending |
+| Document knitted and visually inspected | Pending |
+
+The results above were reported from the student's R session.
+Visual consistency is not an independent calculation check.
+
+# Limitations
+
+- Nine synthetic records cannot establish real retail trends.
+- No currency is specified.
+- The script does not currently check duplicate identifiers, invalid
+  categories, negative values, or transaction arithmetic consistency.
+- The project provides descriptive totals, not forecasts or statistical
+  inference.
+- The displayed code chunks do not execute during knitting.
+- Independent spreadsheet verification remains pending.
+
+# AI Assistance Disclosure
+
+ChatGPT assisted with planning, synthetic data examples, R explanations,
+instructional code patterns, and documentation drafting.
+
+Date of assistance: October 7, 2026 (America/Toronto).
+
+Model/version: Not recorded; add the displayed model if available.
+
+The student must review this draft against the saved script, replace the
+chart placeholder, and record subsequent prompts and checks in Appendix.md.

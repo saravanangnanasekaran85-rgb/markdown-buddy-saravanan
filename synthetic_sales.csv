@@ -1,0 +1,10 @@
+transaction_id,category,quantity,unit_price,sales_amount
+T001,Stationery,2,5,10
+T002,Electronics,1,30,30
+T003,Homeware,3,8,24
+T004,Stationery,4,3,12
+T005,Electronics,2,15,30
+T006,Homeware,1,12,12
+T007,Stationery,3,6,18
+T008,Electronics,1,25,25
+T009,Homeware,2,10,20
