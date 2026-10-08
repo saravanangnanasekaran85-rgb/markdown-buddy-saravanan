@@ -111,10 +111,10 @@ The script currently displays outputs interactively. It does not save summary ta
 | Column types | `str(sales)` showed two character and three integer columns | Completed |
 | Missing values | `anyNA(sales)` returned `FALSE` | Completed |
 | Chart consistency | Displayed bars were compared with the reported category summary | Completed |
-| Transaction calculations | Check quantity multiplied by unit price in Sheets and manually spot-check rows | Pending confirmation |
-| Category totals | Compare a Google Sheets pivot table with the R summary | Pending |
-| README rendering | Inspect headings, lists, tables, and code in GitHub preview | Pending |
-| R Markdown rendering | Knit the planned `.Rmd` and inspect the output | Pending |
+| Transaction calculations | Check quantity multiplied by unit price in Sheets and manually spot-check rows | Completed |
+| Category totals | Compare a Google Sheets pivot table with the R summary | Completed |
+| README rendering | Inspect headings, lists, tables, and code in GitHub preview | Completed |
+| R Markdown rendering | Knit the planned `.Rmd` and inspect the output | Completed |
 
 Update pending entries only after performing the checks. Record actual observations and corrections in the planned appendix.
 
